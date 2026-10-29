@@ -286,7 +286,7 @@ This laboratory is a project towards my Internship program at Network Walks.
 # 👤 Author
 
 **Oluwadurotimi Adedokun Adeyemi**\
-Cybersecurity Professional B084M
+Cybersecurity Professional B084
 
 LinkedIn: [https://www.linkedin.com/in/olúwadúrótìmí-adédòkun](https://www.linkedin.com/in/olúwadúrótìmí-adédòkun)
 
