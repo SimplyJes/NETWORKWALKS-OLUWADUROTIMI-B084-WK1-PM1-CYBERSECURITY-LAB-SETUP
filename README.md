@@ -69,7 +69,7 @@ It can be used for activities such as:
 
 ## 🏗️ Lab Architecture
 
-![](1-screenshot-title-image.png)
+![](Screenshot_1.png)
 
 
 Additional target machines can be added to the same virtual network in future projects.
@@ -121,7 +121,7 @@ IPv4 Prefix:  10.0.0.0/24
 DHCP:         Enabled
 IPv6:         Disabled
 
-![](2-screenshot-network-settings-1.png)
+![](Screenshot_2.png)
 
 A **NAT Network** was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
 
@@ -146,9 +146,9 @@ Adapter Type: Intel PRO/1000 MT Desktop
 The VM was allocated:
 
 ```text
-RAM: 2048 MB
+RAM: 4096 MB
 ```
-![](3-screenshot-kali-linux.png)
+![](Screenshot_3.png)
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
 
@@ -170,7 +170,7 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](4-screenshot-kali-network-settings.png)
+![](Screenshot_4.png)
 
 ---
 
@@ -178,15 +178,12 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 
 After completing the initial configuration, a VirtualBox snapshot was created.
 
-Example snapshot name:
+![]()
 
-```text
-Clean Kali - Network Setup
-```
-
-The snapshot represents the clean baseline of the laboratory.
+This snapshot represents the clean baseline of this laboratory.
 
 If a future exercise changes or damages the VM configuration, the machine can be restored to this baseline.
+
 
 
 ---
@@ -195,25 +192,14 @@ If a future exercise changes or damages the VM configuration, the machine can be
 
 | ✅ Test                        | 🧾 Command                      | 🎯 Expected Result              |
 | ----------------------------- | ------------------------------- | ------------------------------- |
-| 🌐 Check IP address           | `ip a`                          | Correct Kali IP displayed       |
-| 📡 Test gateway               | `ping 10.0.0.1`                 | Successful replies              |
-| 🌍 Test Internet connectivity | `ping 8.8.8.8`                  | Successful replies              |
-| 🔎 Test DNS resolution        | `nslookup networkwalks.com`     | Domain resolves                 |
-| 🧰 Verify Nmap                | `nmap --version`                | Nmap version displayed          |
-| 🔄 Verify snapshot            | Restore snapshot and run `ip a` | Baseline configuration restored |
+| 🌐 Check IP address           | `ip a`                          | inet 10.0.0.2/24 brd 10.0.0.255 scope global noprefixroute eth0 |
+| 📡 Test gateway               | `ping 10.0.0.1`                 | 14 packets transmitted, 14 received, 0% packet loss, time 13250ms  |
+| 🌍 Test Internet connectivity | `ping 8.8.8.8`                  | 6 packets transmitted, 6 received, 0% packet loss, time 5003ms  |
+| 🔎 Test DNS resolution        | `nslookup networkwalks.com`     | ![]()                 |
+| 🧰 Verify Nmap                | `nmap --version`                | Nmap version 7.99 ( https://nmap.org ) |
+| 🔄 Verify snapshot            | Restore snapshot and run `ip a` | inet 10.0.0.2/24 brd 10.0.0.255 scope global noprefixroute eth0 |
 
-### Example Results
 
-```text
-IP Address:
-10.0.0.2/24
-
-Gateway:
-10.0.0.1
-
-DNS:
-8.8.8.8
-```
 
 ---
 
